@@ -40,12 +40,12 @@ class List {
 
 const list = new List ("Fixa julspellista", false);
 const list2 = new List ("Julpynta", false);
-const list3 = new List ("Julbaka", false);
-const list4 = new List ("Inhämta önskelistor", false);
-const list5 = new List ("Köp julklappar", false);
-const list6 = new List ("Klä granen", false);
+const list3 = new List ("Köp julklappar", false);
+// const list4 = new List ("Inhämta önskelistor", false);
+const list4 = new List ("Julbaka", false);
+const list5 = new List ("Klä granen", false);
 
-const myList = [list, list2, list3, list4, list5, list6];
+const myList = [list, list2, list3, list4, list5];
 
 const createHtmlForList = () => {
   const container = document.getElementById("container");
@@ -94,6 +94,28 @@ const createHtmlForList = () => {
 };
 
 createHtmlForList();
+
+const sortButton = document.createElement("button");
+sortButton.innerHTML = "Sort";
+sortButton.className = "sort-btn";
+
+document.body.appendChild(sortButton);
+
+sortButton.addEventListener("click", (e) => {
+  myList.sort((a, b) => {
+    let ta = a.task.toLowerCase(),
+        tb = b.task.toLowerCase();
+  
+    if (ta < tb) {
+        return -1;
+    }
+    if (ta > tb) {
+        return 1;
+    }
+    return 0;
+  });
+  createHtmlForList();
+});
 
 console.log(myList);
 
