@@ -41,7 +41,6 @@ class List {
 const list = new List ("Fixa julspellista", false);
 const list2 = new List ("Julpynta", false);
 const list3 = new List ("Köp julklappar", false);
-// const list4 = new List ("Inhämta önskelistor", false);
 const list4 = new List ("Julbaka", false);
 const list5 = new List ("Klä granen", false);
 
