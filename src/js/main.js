@@ -1,4 +1,5 @@
 import "./../scss/style.scss";
+import { List } from "../models/List";
 
 const formContainer = document.getElementById("form-box");
 const formTag = document.createElement("form");
@@ -27,16 +28,6 @@ submitButton.addEventListener("click", (e) => {
   }
   inputTag.value = "";
 });
-
-class List {
-  task;
-  taskDone;
-
-  constructor (task, taskDone){
-    this.task = task;
-    this.taskDone = taskDone;
-  }
-}
 
 const list = new List ("Fixa julspellista", false);
 const list2 = new List ("Julpynta", false);
